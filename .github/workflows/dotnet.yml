@@ -26,5 +26,5 @@ jobs:
  
     - uses: AButler/upload-release-assets@v2.0
       with:
-        files: 'bin/Debug/*'
+        files: $Env:GITHUB_WORKSPACE\bin\Debug\SimpleWindowsService1.exe
         repo-token: ${{ secrets.GITHUB_TOKEN }}
