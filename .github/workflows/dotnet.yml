@@ -23,8 +23,23 @@ jobs:
       run: msbuild SimpleWindowsService1.csproj
       env:
           ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
- 
-    - uses: AButler/upload-release-assets@v2.0
+
+    - name: Create Release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        files: bin\Debug\SimpleWindowsService1.exe
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        tag_name: 1.0
+        release_name: release
+        draft: false
+        prerelease: false
+
+    - name: Upload Release Asset
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: bin\Debug\SimpleWindowsService1.exe
+        asset_name: service.exe
+        asset_content_type: application/octet-stream
